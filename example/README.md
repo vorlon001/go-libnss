@@ -21,3 +21,6 @@ group:      files {__LIB_NSS_NAME} sss
 ```
 
 Once that is done, you should see results from `getent passwd`, `getent group`, and `getent shadow` commands.
+
+# Using the Example as a Boiler Plate
+The example implements `passwd`, `group`, and `shadow`; however you don't have to implement all of them. The type `LIBNSS` is embedded to provide default returns for unimplemented methods. So just write the things you want and forget about the rest. 
