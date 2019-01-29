@@ -1,6 +1,23 @@
 package nss
 //#include <grp.h>
 //#include <errno.h>
+//#include <stdlib.h>
+/*
+static char**makeCharArray(int size) {
+	return calloc(sizeof(char*), size);
+}
+
+static void setArrayString(char **a, char *s, int n) {
+	a[n] = s;
+}
+
+static void freeCharArray(char **a, int size) {
+	int i;
+	for (i = 0; i < size; i++)
+		free(a[i]);
+	free(a);
+}
+*/
 import "C"
 
 import(
@@ -82,15 +99,13 @@ func setCGroup(p *Group, grp *C.struct_group, buf *C.char, buflen C.size_t, errn
 	
 	// ################ MAKING **C.char in GO! 
 	// Making a list of the members...
-	member_list := p.Members
+	// NOTE: There has to be a better way to do this.
+	// I'm also making an assumption the process running this dies, freeing up the memory.
 
-	// Prepare an array of C arrays
-	members := make([]*C.char, len(member_list)+1)
-	// Point super elements to the C.chars
-	for i, u := range member_list {
-		members[i] = C.CString(u)
-		// Map the address of the member to gr_mem
-		grp.gr_mem = (**C.char)(unsafe.Pointer(&members[i]))
+	grp.gr_mem = C.makeCharArray(C.int(len(p.Members)))
+	//defer C.freeCharArray(grp.gr_mem, C.int(len(p.Members)))
+	for i, u := range p.Members {
+		C.setArrayString(grp.gr_mem, C.CString(u), C.int(i))
 	}
 	// ################ DONE MAKING **C.char in GO! 
 
