@@ -7,7 +7,7 @@ The goal is to provide a working example with populated data so that you can get
 The following command will build `libnss_gotest.so.2`, which you then put in `/lib64/`:
 
 ```
-CGO_CFLAGS="-g -O2 -D __LIB_NSS_NAME=gotest" go build --buildmode=c-shared -o libnss_gotest.so.2 example_implementation.go testdata.go
+CGO_CFLAGS="-g -O2 -D __LIB_NSS_NAME=gotest" go build --buildmode=c-shared -o libnss_gotest.so.2 implementation.go testdata.go
 ```
 
 The `CGO_CFLAGS` portion is important. A value has to be set for `__LIB_NSS_NAME` and the resulting object file should be set to `libnss_{__LIB_NSS_NAME}.so.2`. There are some built in C macros to generate function names that libnss relies on.
