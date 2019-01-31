@@ -2,6 +2,7 @@ package main
 
 import (
 	. "github.com/protosam/go-libnss"
+	. "github.com/protosam/go-libnss/structs"
 )
 
 
