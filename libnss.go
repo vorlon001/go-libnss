@@ -21,13 +21,13 @@ type Implementation interface{
 	//PasswdClose() (Status)
 	PasswdAll() (Status, []Passwd)
 	PasswdByName(name string) (Status, Passwd)
-	PasswdByUid(uid UID) (Status, Passwd)
+	PasswdByUid(uid uint) (Status, Passwd)
 
 	//GroupOpen() (Status)
 	//GroupClose() (Status)
 	GroupAll() (Status, []Group)
 	GroupByName(name string) (Status, Group)
-	GroupByGid(gid GID) (Status, Group)
+	GroupByGid(gid uint) (Status, Group)
 	
 	//ShadowOpen() (Status)
 	//ShadowClose() (Status)
@@ -64,7 +64,7 @@ func (self LIBNSS) PasswdByName(name string) (Status, Passwd) {
 }
 
 // getpwuid
-func (self LIBNSS) PasswdByUid(uid UID) (Status, Passwd) {
+func (self LIBNSS) PasswdByUid(uid uint) (Status, Passwd) {
 	return StatusUnavail, Passwd{}
 }
 
@@ -89,7 +89,7 @@ func (self LIBNSS) GroupByName(name string) (Status, Group) {
 }
 
 // getgrnam
-func (self LIBNSS) GroupByGid(gid GID) (Status, Group) {
+func (self LIBNSS) GroupByGid(gid uint) (Status, Group) {
 	return StatusUnavail, Group{}
 }
 
