@@ -21,6 +21,7 @@ static void freeCharArray(char **a, int size) {
 import "C"
 
 import(
+	. "github.com/protosam/go-libnss/structs"
 	"bytes"
 	"syscall"
 	"unsafe"
