@@ -36,8 +36,9 @@ type Implementation interface{
 }
 
 
-type UID structs.UID
-type GID structs.GID
+type UID uint
+type GID uint
+
 type Passwd structs.Passwd
 type Group structs.Group
 type Shadow structs.Shadow
