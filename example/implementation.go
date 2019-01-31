@@ -39,7 +39,7 @@ func (self TestImpl) PasswdByName(name string) (Status, Passwd) {
 }
 
 // PasswdByUid() returns a single entry by uid.
-func (self TestImpl) PasswdByUid(uid UID) (Status, Passwd) {
+func (self TestImpl) PasswdByUid(uid uint) (Status, Passwd) {
 	for _, entry := range dbtest_passwd {
 		if entry.UID == uid {
 			return StatusSuccess, entry
@@ -71,7 +71,7 @@ func (self TestImpl) GroupByName(name string) (Status, Group) {
 }
 
 // getgrnam
-func (self TestImpl) GroupByGid(gid GID) (Status, Group) {
+func (self TestImpl) GroupByGid(gid uint) (Status, Group) {
 	for _, entry := range dbtest_group {
 		if entry.GID == gid {
 			return StatusSuccess, entry
