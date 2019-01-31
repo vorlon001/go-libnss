@@ -15,8 +15,6 @@ type Status int32
 
 var ErrNotFound error = errors.New("not found")
 
-type UID uint
-type GID uint
 
 type Implementation interface{
 	//PasswdOpen() (Status)
@@ -38,6 +36,8 @@ type Implementation interface{
 }
 
 
+type UID structs.UID
+type GID structs.GID
 type Passwd structs.Passwd
 type Group structs.Group
 type Shadow structs.Shadow
