@@ -13,3 +13,6 @@ Take a gander at the `example` directory. It includes information on how to comp
 
 ## License
 MIT License
+
+# Projects Using Go-Libnss
+[Go-Libnss-Etcd](https://github.com/protosam/go-libnss-etcd) - An NSS package that stores passwd, group, and shadow data in etcd. It also comes with CLI tools for managing users and groups stored in etcd.
