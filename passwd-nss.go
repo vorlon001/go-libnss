@@ -59,7 +59,7 @@ func go_getpwuid(uid UID, passwd *C.struct_passwd, buf *C.char, buflen C.size_t,
 
 // Sets the C values for libnss
 func setCPasswd(p *Passwd, passwd *C.struct_passwd, buf *C.char, buflen C.size_t, errnop *C.int) Status {
-	if len(p.Username)+len(p.Password)+len(p.Gecos)+len(p.Dir)+len(p.Shell)+5 > int(buflen) || p.UID < 1000 || p.GID < 1000 {
+	if len(p.Username)+len(p.Password)+len(p.Gecos)+len(p.Dir)+len(p.Shell)+5 > int(buflen) {
 		*errnop = C.int(syscall.EAGAIN)
 		return StatusTryagain
 	}
