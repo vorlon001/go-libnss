@@ -66,7 +66,7 @@ func go_getgrnam_r(name string, grp *C.struct_group, buf *C.char, buflen C.size_
 }
 
 //export go_getgrgid_r
-func go_getgrgid_r(gid GID, grp *C.struct_group, buf *C.char, buflen C.size_t, errnop *C.int) Status {
+func go_getgrgid_r(gid uint, grp *C.struct_group, buf *C.char, buflen C.size_t, errnop *C.int) Status {
 	status, group := implemented.GroupByGid(gid)
 	if status != StatusSuccess {
 		return status
