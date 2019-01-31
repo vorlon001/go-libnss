@@ -1,5 +1,8 @@
 package structs
 
+type UID uint
+type GID uint
+
 type Passwd struct {
 	Username		string			/* username */
 	Password		string			/* user password */
