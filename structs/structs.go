@@ -1,13 +1,10 @@
 package structs
 
-type UID uint
-type GID uint
-
 type Passwd struct {
 	Username		string			/* username */
 	Password		string			/* user password */
-	UID				UID				/* user ID */
-	GID				GID				/* group ID */
+	UID				uint				/* user ID */
+	GID				uint				/* group ID */
 	Gecos			string			/* user information */
 	Dir				string			/* home directory */
 	Shell			string			/* shell program */
@@ -16,7 +13,7 @@ type Passwd struct {
 type Group struct {
 	Groupname		string			/* group name */
 	Password		string			/* group password */
-	GID				GID				/* group ID */
+	GID				uint				/* group ID */
 	Members			[]string		/* slice of group member names */
 }
 
