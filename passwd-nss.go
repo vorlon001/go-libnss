@@ -48,7 +48,7 @@ func go_getpwnam(name string, passwd *C.struct_passwd, buf *C.char, buflen C.siz
 }
 
 //export go_getpwuid
-func go_getpwuid(uid UID, passwd *C.struct_passwd, buf *C.char, buflen C.size_t, errnop *C.int) Status {
+func go_getpwuid(uid uint, passwd *C.struct_passwd, buf *C.char, buflen C.size_t, errnop *C.int) Status {
 	status, pwd := implemented.PasswdByUid(uid)
 	if status != StatusSuccess {
 		return status
