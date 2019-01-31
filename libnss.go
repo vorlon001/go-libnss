@@ -2,7 +2,7 @@ package nss
 // #include <nss.h>
 import "C"
 import "errors"
-import "github.com/protosam/go-libnss/structs"
+import . "github.com/protosam/go-libnss/structs"
 
 const (
 	StatusTryagain = C.NSS_STATUS_TRYAGAIN
@@ -34,11 +34,6 @@ type Implementation interface{
 	ShadowAll() (Status, []Shadow)
 	ShadowByName(name string) (Status, Shadow)
 }
-
-
-type Passwd structs.Passwd
-type Group structs.Group
-type Shadow structs.Shadow
 
 // Prototype structure for people to embed
 type LIBNSS struct {}
