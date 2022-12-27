@@ -1,5 +1,7 @@
 ⚠️ Avoid relying on Go for shared libraries. The [runtime](https://pkg.go.dev/runtime) uses signals it assumed to be unused for concurrency management. Assumptions like this are why the verion of Go can not be updated for `go-libnss` and make Go less predicable when building shared libraries.
 
+The current recommendation is to build services to be compatible with existing protocols like LDAP. You can use [go-ldap](https://github.com/go-ldap/ldap) to do that.
+
 # Go-Libnss
 This is an abstracted library in Go that wraps around libnss, allowing you to write new nss modules purely in Go.
 
