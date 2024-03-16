@@ -1,7 +1,7 @@
 package main
 
 import (
-	. "github.com/protosam/go-libnss/structs"
+	. "github.com/vorlon001/go-libnss/structs"
 )
 
 // Test database objects.
