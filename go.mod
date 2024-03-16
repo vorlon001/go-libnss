@@ -1,3 +1,3 @@
-module github.com/protosam/go-libnss
+module github.com/vorlon001/go-libnss
 
-go 1.14
+go 1.22
