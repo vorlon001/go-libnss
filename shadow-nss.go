@@ -4,7 +4,7 @@ package nss
 import "C"
 
 import(
-	. "github.com/protosam/go-libnss/structs"
+	. "github.com/vorlon001/go-libnss/structs"
 	"bytes"
 	"syscall"
 	"unsafe"
