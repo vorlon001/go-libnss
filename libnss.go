@@ -2,7 +2,7 @@ package nss
 // #include <nss.h>
 import "C"
 import "errors"
-import . "github.com/protosam/go-libnss/structs"
+import . "github.com/vorlon001/go-libnss/structs"
 
 const (
 	StatusTryagain = C.NSS_STATUS_TRYAGAIN
