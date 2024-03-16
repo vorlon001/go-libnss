@@ -1,8 +1,8 @@
 package main
 
 import (
-	. "github.com/protosam/go-libnss"
-	. "github.com/protosam/go-libnss/structs"
+	. "github.com/vorlon001/go-libnss"
+	. "github.com/vorlon001/go-libnss/structs"
 )
 
 
